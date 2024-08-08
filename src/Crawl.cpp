@@ -5,6 +5,7 @@
 #include <thread>
 #include <chrono>
 #include <mutex>
+#include "Crawl.h"
 
 using namespace std;
 
@@ -15,18 +16,17 @@ void log(const std::string& message) {
     cout << message << endl;
 }
 
-int main() {
-    cout << "C R A W L" << endl;
+Crawl::Crawl(int n_threads, std::vector<std::string>&& urls): _n_threads(n_threads), _urls(urls) {
+    cout << "Initialized crawler." << endl;
+}
 
-    std::vector<std::string> input_urls = {
-        "http://example.com",
-        "http://example.org",
-        "http://example.net"
-    };
+void Crawl::start() {
+    log("Starting to crawl...");
 
     std::vector<std::thread> crawlers;
 
-    for(auto& url: input_urls) {
+    for(int i = 0; i < _n_threads; i++) {
+        auto& url = _urls[i % _urls.size()];
         crawlers.push_back(std::thread([&url]() {
             log("Crawling " + url + "...");
             this_thread::sleep_for(1s);
