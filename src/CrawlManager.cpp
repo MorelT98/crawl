@@ -5,7 +5,7 @@
 #include <thread>
 #include <chrono>
 #include <mutex>
-#include "Crawl.h"
+#include "CrawlManager.h"
 
 using namespace std;
 
@@ -16,11 +16,11 @@ void log(const std::string& message) {
     cout << message << endl;
 }
 
-Crawl::Crawl(int n_threads, std::vector<std::string>&& urls): _n_threads(n_threads), _urls(urls) {
+CrawlManager::CrawlManager(int n_threads, std::vector<std::string>&& urls): _n_threads(n_threads), _urls(urls) {
     cout << "Initialized crawler." << endl;
 }
 
-void Crawl::start() {
+void CrawlManager::start() {
     log("Starting to crawl...");
 
     std::vector<std::thread> crawlers;

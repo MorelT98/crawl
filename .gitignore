@@ -1,11 +1,2 @@
 .vscode
-src/main.dSYM
-src/main
-CMakeFiles
-CMakeCache.txt
-lib
-bin
-cmake_install.cmake
-Makefile
 build
-CTestTestfile.cmake

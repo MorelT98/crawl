@@ -3,9 +3,9 @@
 
 using namespace std;
 
-class Crawl{
+class CrawlManager{
 public:
-    Crawl(int n_threads, std::vector<std::string>&& urls);
+    CrawlManager(int n_threads, std::vector<std::string>&& urls);
     void start();
 
 private:

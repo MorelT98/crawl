@@ -1,8 +1,8 @@
 #include <gtest/gtest.h>
-#include "Crawl.h"
+#include "CrawlManager.h"
 
-TEST(main, teststub) {
-    Crawl crawl(
+TEST(CrawlTest, firstTest) {
+    CrawlManager crawlManager(
         5, // n_threads
         {
             "https://example1.com", 
@@ -10,11 +10,6 @@ TEST(main, teststub) {
             "https://example3.com"
         }
     );
-    crawl.start();
+    crawlManager.start();
     ASSERT_EQ(0, 0);
-}
-
-int main(int argc, char* argv[]) {
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
 }
