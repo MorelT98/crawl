@@ -9,7 +9,7 @@ FetchContent_MakeAvailable(googletest)
 add_library(GTest::GTest INTERFACE IMPORTED)
 target_link_libraries(GTest::GTest INTERFACE gtest_main)
 
-add_executable(crawltest CrawlTest.cpp)
+add_executable(crawltest CrawlManagerTest.cpp)
 
 target_link_libraries(crawltest PRIVATE GTest::GTest crawlbase)
 
