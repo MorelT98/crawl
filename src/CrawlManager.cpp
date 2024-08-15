@@ -1,4 +1,6 @@
 #include <iostream>
+#include <curl/curl.h>
+#include "gumbo.h"
 #include "CrawlManager.h"
 
 using namespace std;
